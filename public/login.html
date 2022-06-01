@@ -7,10 +7,153 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="icon" href="./imgs/icon_op.png">
+    <link rel="stylesheet" href="./style/login.css">
 </head>
 
 <body>
+    <header>
+        <nav>
+            <img class="logo" src="./imgs/tatoo.jpg" alt="">
+            <ul class="lista_nav">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="personagens.html">Personagens</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+                <li><a href="login.html">Login</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <div id="container_login">
+        <h1>Bem vindo de volta companheiro!</h1>
+        <form>
+            <div class="caixa">
+                <label for="email">E-mail</label>
+                <input type="email" onkeyup="verificar_email()" name="email" id="input_email"
+                    placeholder="Digite seu e-mail" required>
+            </div>
+
+            <div class="caixa1 espaco">
+                <label for="senha">Senha</label>
+                <input type="password" onkeyup="verificar_senha()" name="senha" id="input_senha"
+                    placeholder="Digite sua senha" required>
+                <img id="eye" onclick="senha_ver()" src="imgs/ver_senha.png" alt="" width="20px">
+            </div>
+
+            <div class="texto">
+                <p class="redirect">Ainda não é cadastrado? cadastre-se clicando <a href="cadastro.html">aqui</a>.</p>
+            </div>
+
+            <div class="caixa">
+                <button type="button" class="btn-submit" onclick="entrar()">Entrar</button>
+            </div>
+
+            <div id="span_erro">
+                <span id="span_erro_email"></span>
+                <span id="span_erro_senha"></span>
+            </div>
+
+        </form>
+
+    </div>
+    f
+    <footer>
+        <div class="footer">Gabriel Nogueira Da Costa © 2022</div>
+    </footer>
 
 </body>
 
 </html>
+
+<script>
+
+    function entrar() {
+        //aguardar();
+
+        var emailVar = input_email.value;
+        var senhaVar = input_senha.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            // finalizarAguardar();
+            return false;
+        }
+        else {
+            //setInterval(sumirMensagem, 5000)
+        }
+
+        const passwordinput = document.getElementById("input_senha");
+        const olho_aberto = document.getElementById("eye");
+
+        function senha_ver() {
+            let inputtype = passwordinput.type == "password";
+
+            if (inputtype) {
+                mostrar_senha();
+            } else {
+                esconder_senha();
+            }
+        }
+
+        function mostrar_senha() {
+            passwordinput.setAttribute("type", "text");
+            olho_aberto.setAttribute("src", "./imgs/senha.png");
+        }
+
+        function esconder_senha() {
+            passwordinput.setAttribute("type", "password");
+            olho_aberto.setAttribute("src", "imgs/ver_senha.png");
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "./personagens.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    // finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+
+</script>

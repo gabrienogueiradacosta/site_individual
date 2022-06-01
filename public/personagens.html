@@ -10,25 +10,89 @@
     <link rel="stylesheet" href="./style/personagens.css">
 </head>
 <div id="cartazes_procurados"></div>
+
 <body>
 
     <nav>
         <img class="logo" src="./imgs/tatoo.jpg" alt="">
         <ul class="lista_nav">
-            <li><a href="home.html">Início</a></li>
+            <li><a href="index.html">Início</a></li>
             <li><a href="personagens.html">Personagens</a></li>
             <li><a href="cadastro.html">Cadastro</a></li>
             <li><a href="login.html">Login</a></li>
         </ul>
     </nav>
 
+    <section id="inicio">
 
+        <div class="container">
 
+            <div class="texto">
+                <h1>Vote no seu personagem favorito</h1>
+            </div>
 
-    <footer>
-        <div class="footer">Gabriel Nogueira Da Costa © 2022</div>
-    </footer>
+            <div class="grupo1">
+
+                <div class="personagens">
+                    <img onclick="cadastrar_voto(1)" src="./imgs/icon_luffy.jpg" alt="procurado_luffy">
+                </div>
+
+                <div class="personagens">
+                    <img onclick="cadastrar_voto(2)" src="./imgs/icon_zoro.jpg" alt="procurado_zoro">
+                </div>
+
+                <div class="personagens">
+                    <img onclick="cadastrar_voto(3)" src="./imgs/nami_icon.jpg" alt="procurada_nami">
+                </div>
+
+            </div>
+
+            <div class="grupo2">
+
+                <div class="personagens">
+                    <img onclick="cadastrar_voto(4)" src="./imgs/icon_usopp.jpg" alt="procurado_usopp">
+                </div>
+
+                <div class="personagens">
+                    <img onclick="cadastrar_voto(5)" src="./imgs/icon_sanji.jpg" alt="procurado_sanji">
+                </div>
+
+                <div class="personagens">
+                    <img onclick="cadastrar_voto(6)" src="./imgs/icon_chopper.jpg" alt="procurado_chopper">
+                </div>
+
+            </div>
+
+            <div class="grupo3">
+
+                <div class="personagens">
+                    <img onclick="cadastrar_voto(7)" src="./imgs/icon_robin.jpg" alt="procurada_robin">
+                </div>
+
+                <div class="personagens">
+                    <img onclick="cadastrar_voto(8)" src="./imgs/icon_franky.jpg" alt="procurado_franky">
+                </div>
+
+                <div class="personagens">
+                    <img onclick="cadastrar_voto(9) "src="./imgs/icon_brook.jpg" alt="procurado_brook">
+                </div>
+
+            </div>
+
+            <div class="grupo4">
+
+                <div class="personagens">
+                    <img onclick="cadastrar_voto(10)" src="./imgs/icon_jinbe.jpg" alt="procurado_jinbe">
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
 
 </body>
+
 <script src="./js/personagens.js"></script>
+
 </html>

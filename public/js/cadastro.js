@@ -1,11 +1,11 @@
 var nomeVar = "";
-var cnpjVar = "";
+var telefoneVar = "";
 var emailVar = "";
 var senhaVar = "";
 var confirmarVar = "";
 
 //Validação e-mail
-function verificar_mail() {
+function verificar_email() {
     emailVar = input_email.value.trim();
 
     if (emailVar.indexOf("@") > 3 && (emailVar.endsWith(".com.br") || emailVar.endsWith(".com") ||
@@ -13,7 +13,7 @@ function verificar_mail() {
         span_erro_email.innerHTML = "✓"
     }
     else {
-        span_erro_email.innerHTML = '*Insira "@" e terminação .com, por exemplo'
+        span_erro_email.innerHTML = '<b>*Insira "@" e terminação .com, por exemplo</b>'
     }
 }
 
@@ -28,12 +28,12 @@ function verificar_nome() {
     }
 }
 
-//Validação CNPJ
+//Validação Telefone
 function verificar_telefone() {
-    cnpjVar = Number(input_telefone.value.trim);
+    telefoneVar = input_telefone.value.trim();
 
-    if (cnpjVar.length > 13) {
-        span_erro_telefone.innerHTML = '*Insira 14 digitos no CNPJ'
+    if (telefoneVar.length > 11) {
+        span_erro_telefone.innerHTML = '*Insira 14 digitos do telefone'
     }
     else {
         span_erro_telefone.innerHTML = "✓"

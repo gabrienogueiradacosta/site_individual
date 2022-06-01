@@ -15,7 +15,7 @@
         <nav>
             <img class="logo" src="./imgs/tatoo.jpg" alt="">
             <ul class="lista_nav">
-                <li><a href="home.html">Início</a></li>
+                <li><a href="index.html">Início</a></li>
                 <li><a href="personagens.html">Personagens</a></li>
                 <li><a href="cadastro.html">Cadastro</a></li>
                 <li><a href="login.html">Login</a></li>
@@ -26,47 +26,46 @@
 
     <div id="container">
         <h1>Bem vindo marujo!</h1>
-        <form action="register_form">
+        <form>
             <div class="caixa">
                 <label for="email">E-mail</label>
                 <input type="email" onkeyup="verificar_email()" name="email" id="input_email"
                     placeholder="Digite seu e-mail" required>
+                    <span class="erro_email" id="span_erro_email"></span>
             </div>
 
             <div class="caixa1 espaco">
                 <label for="nome">Nome</label>
                 <input type="text" onkeyup="verificar_nome()" name="nome" id="input_nome"
                     placeholder="Digite o seu nome" required>
+                    <span id="span_erro_nome"></span>
             </div>
 
             <div class="caixa1">
                 <label for="telefone">Telefone</label>
                 <input type="number" onkeyup="verificar_telefone()" name="telefone" id="input_telefone"
                     placeholder="Digite o seu telefone" required>
+                    <span id="span_erro_telefone"></span>
             </div>
 
             <div class="caixa1 espaco">
                 <label for="senha">Senha</label>
                 <input type="password" onkeyup="verificar_senha()" name="senha" id="input_senha"
                     placeholder="Digite sua senha" required>
+                    <span id="span_erro_senha"></span>
             </div>
 
             <div class="caixa1">
                 <label for="senha">Confirmação de Senha</label>
                 <input type="password" onkeyup="verificar_confirmacao()" name="senha" id="input_confirmacao"
                     placeholder="Confirme sua senha" required>
+                    <span id="span_erro_confirmacao"></span>
             </div>
 
             <div class="caixa">
-                <button class="btn-submit" onclick="cadastrar()">Cadastrar</button>
+                <button type="button" class="btn-submit" onclick="cadastrar()">Cadastrar</button>
             </div>
 
-            <div id="span_erro">
-                <span id="span_erro_nome_usuario"></span>
-                <span id="span_erro_cnpj"></span>
-                <span id="span_erro_email"></span>
-                <span id="span_erro_senha"></span>
-                <span id="span_erro_conf_senha"></span>
             </div>
 
         </form>
@@ -78,7 +77,71 @@
     </footer>
 
     <script src="./js/cadastro.js"></script>
+    <script src="./js/funcoes.js"></script>
 
 </body>
 
 </html>
+
+<script>
+    function cadastrar() {
+       // aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var emailVar = input_email.value;
+        var nomeVar = input_nome.value;
+        var telefoneVar = input_telefone.value
+        var senhaVar = input_senha.value;
+        var confirmacaoVar = input_confirmacao.value;
+
+        if (nomeVar == "" || emailVar == "" || telefoneVar== "" || senhaVar == "" || confirmacaoVar == "") {
+            //cardErro.style.display = "block"
+            alert("Mensagem de erro para todos os campos em branco");
+
+           // finalizarAguardar();
+            return false;
+        }
+        else {
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                emailServer: emailVar,
+                nomeServer: nomeVar,
+                telefoneServer: telefoneVar,
+                senhaServer: senhaVar,
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+               // cardErro.style.display = "block";
+
+               // mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                setTimeout(() => {
+                    window.location = "./login.html";
+                }, "2000")
+                
+               // limparFormulario();
+               // finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
+    }
+
+</script>
