@@ -2,7 +2,6 @@ body {
     margin: 0 auto;
     padding: 0;
     height: 100vh;
-    width: 100vw;
 }
 
 a {
@@ -41,11 +40,6 @@ nav {
     margin-left: 32px;
 }
 
-#inicio{
-    width: 100%;
-    height: 100vh;
-}
-
 .container {
     width: 100%;
     display: flex;
@@ -53,9 +47,35 @@ nav {
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.233);
+    background-size: 200px;
+    background-position: center;
+    transition: 1s;
+    background-image: url(../imgs/procurado_luffy.jpg);
 }
 
-.grupo1{
+.texto {
+    border-radius: 10px;
+    height: 10vh;
+    margin: 20px;
+    color: #fff;
+    background-color: #000;
+    text-align: center;
+    padding: 10px 10px
+}
+
+.texto h1 {
+    font-size: 35px;
+    margin: 0;
+    padding: 0;
+}
+
+.texto h3 {
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.grupo1 {
     width: 100%;
     height: 30vh;
     display: flex;
@@ -63,7 +83,7 @@ nav {
     justify-content: space-evenly;
 }
 
-.grupo2{
+.grupo2 {
     width: 100%;
     height: 30vh;
     display: flex;
@@ -71,7 +91,7 @@ nav {
     justify-content: space-evenly;
 }
 
-.grupo3{
+.grupo3 {
     width: 100%;
     height: 30vh;
     display: flex;
@@ -79,7 +99,7 @@ nav {
     justify-content: space-evenly;
 }
 
-.grupo4{
+.grupo4 {
     width: 100%;
     height: 30vh;
     display: flex;
@@ -87,15 +107,161 @@ nav {
     justify-content: space-evenly;
 }
 
-img{
-    width: 40%;
+.container2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.233);
+    background-size: 200px;
+    background-position: center;
+    transition: 1s;
+    background-image: url(../imgs/procurado_luffy.jpg);
+}
+
+.grupo5 {
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.grupo6 {
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.grupo7 {
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.container3 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.233);
+    background-size: 200px;
+    background-position: center;
+    transition: 1s;
+    background-image: url(../imgs/procurado_luffy.jpg);
+}
+
+.grupo8 {
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.grupo9 {
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.grupo10 {
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+img {
+    width: 45%;
+    height: 25vh;
     margin-left: 1%;
+    justify-content: space-around;
+    margin-top: 4px;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
-.personagens{
+.personagens {
     width: 30%;
     border: #000 solid;
     margin-bottom: 20px;
     align-items: center;
+    background-color: #000;
+    border-radius: 10px;
+    display: flex;
 }
 
+.personagens p {
+    color: #fff;
+    align-self: flex-start;
+    margin-left: 15%;
+}
+
+.valor_total {
+    background-image: url(../imgs/icon_op.png);
+    background-position: 40px;
+    width: 35%;
+    font-size: 30px;
+    text-align: center;
+    color: #fff;
+    border: #000 solid;
+    border-radius: 10px;
+    background-color: #000;
+}
+
+#luffy {
+    box-shadow: rgba(213, 14, 14, 0.529) 0px -50px 36px -28px inset;
+}
+
+#zoro {
+    box-shadow: rgba(12, 153, 55, 0.648) 0px -50px 36px -28px inset;
+}
+
+#nami {
+    box-shadow: rgba(177, 141, 43, 0.661) 0px -50px 36px -28px inset;
+}
+
+#usopp {
+    box-shadow: rgba(76, 200, 150, 0.657) 0px -50px 36px -28px inset;
+}
+
+#sanji {
+    box-shadow: rgba(187, 222, 31, 0.612) 0px -50px 36px -28px inset;
+}
+
+#chopper {
+    box-shadow: rgba(15, 26, 109, 0.772) 0px -50px 36px -28px inset;
+}
+
+#robin {
+    box-shadow: rgba(88, 16, 108, 0.826) 0px -50px 36px -28px inset;
+}
+
+#franky {
+    box-shadow: rgba(133, 131, 176, 0.896) 0px -50px 36px -28px inset;
+}
+
+#brook {
+    box-shadow: rgba(143, 94, 157, 0.35) 0px -50px 36px -28px inset;
+}
+
+#jinbe {
+    box-shadow: rgba(30, 202, 245, 0.638) 0px -50px 36px -28px inset;
+}
+
+.graficos {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}

@@ -105,3 +105,7 @@ function cadastrar() {
 
     return false;
 }
+
+function inicio(){
+    window.location = "./index.html";
+}

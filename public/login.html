@@ -13,10 +13,9 @@
 <body>
     <header>
         <nav>
-            <img class="logo" src="./imgs/tatoo.jpg" alt="">
+            <img onclick="inicio()" class="logo" src="./imgs/tatoo.jpg" alt="">
             <ul class="lista_nav">
                 <li><a href="index.html">Início</a></li>
-                <li><a href="personagens.html">Personagens</a></li>
                 <li><a href="cadastro.html">Cadastro</a></li>
                 <li><a href="login.html">Login</a></li>
 
@@ -41,7 +40,7 @@
             </div>
 
             <div class="texto">
-                <p class="redirect">Ainda não é cadastrado? cadastre-se clicando <a href="cadastro.html">aqui</a>.</p>
+                <p class="redirect">Ainda não é cadastrado? cadastre-se clicando <a href="cadastro.html"><u>aqui</u></a>.</p>
             </div>
 
             <div class="caixa">
@@ -67,6 +66,10 @@
 
 <script>
 
+    function inicio(){
+        window.location = "./index.html";
+    }
+      
     function entrar() {
         //aguardar();
 
@@ -130,7 +133,7 @@
 
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.ID_USUARIO = json.id_usuario;
 
                     setTimeout(function () {
                         window.location = "./personagens.html";

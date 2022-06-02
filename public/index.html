@@ -14,10 +14,9 @@
 <body>
     <header>
         <nav>
-            <img class="logo" src="./imgs/tatoo.jpg" alt="">
+            <img onclick="inicio()" class="logo" src="./imgs/tatoo.jpg" alt="">
             <ul class="lista_nav">
-                <li><a href="home.html">Início</a></li>
-                <li><a href="personagens.html">Personagens</a></li>
+                <li><a href="index.html">Início</a></li>
                 <li><a href="cadastro.html">Cadastro</a></li>
                 <li><a href="login.html">Login</a></li>
 
@@ -33,18 +32,24 @@
             </p><br>
             <hr>
             <br>
-            <h1> 
+            <h1>
                 É fã da série??
             </h1>
-            <h2>Teste seus conhecimentos sobre os Chapéus de palha no nosso quiz!</h2>
-            <p>Acesse nosso quiz clicando <a href="login.html">aqui</a>.</p>
+            <h2>Faça um cadastro para votar no seu Chapéu de Palha favorito</h2>
+            <p>Cadastre-se clicando <a href="login.html"> <u>aqui</u></a>.</p>
         </main>
     </header>
 
     <footer>
         <div class="footer">Gabriel Nogueira Da Costa © 2022</div>
-        
+
     </footer>
 </body>
 
 </html>
+
+<script>
+    function inicio(){
+    window.location = "./index.html";
+}
+</script>

@@ -23,6 +23,7 @@ a :hover {
 .logo {
     width: 9%;
     height: 85px;
+    cursor: pointer;
 }
 
 nav {
@@ -46,11 +47,9 @@ nav {
     margin-left: 32px;
 }
 
-
-
 main {
     color: white;
-    background: #000009ec;
+    background: #000009f4;
     display: flex;
     padding: 30px 30px;
     margin-top: 100px;
@@ -93,7 +92,3 @@ footer {
     justify-content: center;
     align-items: center;
 }
-
-
-
-

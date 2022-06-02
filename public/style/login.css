@@ -21,6 +21,7 @@ a {
 .logo {
     width: 9%;
     height: 85px;
+    cursor: pointer;
 }
 
 nav {
@@ -50,7 +51,7 @@ nav {
     width: 600px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #000009d6;
+    background-color: #000009ed;
     color: #fff;
     border-radius: 10px;
 }

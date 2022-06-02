@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personagens</title>
     <link rel="icon" href="./imgs/icon_op.png">
+    <script src="js/personagens.js"></script>
     <link rel="stylesheet" href="./style/personagens.css">
 </head>
 <div id="cartazes_procurados"></div>
@@ -14,7 +15,7 @@
 <body>
 
     <nav>
-        <img class="logo" src="./imgs/tatoo.jpg" alt="">
+        <img onclick="inicio()" class="logo" src="./imgs/tatoo.jpg" alt="">
         <ul class="lista_nav">
             <li><a href="index.html">Início</a></li>
             <li><a href="personagens.html">Personagens</a></li>
@@ -23,76 +24,379 @@
         </ul>
     </nav>
 
-    <section id="inicio">
+    <div id="body_img" class="container">
 
-        <div class="container">
+        <div class="texto">
+            <h1>Vote no seu Chapéu de Palha favorito</h1>
+            <h3>Para votar clique na imagem!</h3>
+        </div>
 
-            <div class="texto">
-                <h1>Vote no seu personagem favorito</h1>
+        <div class="grupo1">
+
+            <div id="luffy" class="personagens">
+                <img onclick="cadastrar_voto(1)" src="./imgs/icon_luffy.jpg" alt="procurado_luffy">
+                <div class="descricao">
+                    <p>Monkey D. Luffy</p>
+                    <p>Capitão</p>
+                    <P>Recompensa: 1.500.000.000</P>
+                </div>
             </div>
 
-            <div class="grupo1">
-
-                <div class="personagens">
-                    <img onclick="cadastrar_voto(1)" src="./imgs/icon_luffy.jpg" alt="procurado_luffy">
+            <div id="zoro" class="personagens">
+                <img onclick="cadastrar_voto(2)" src="./imgs/icon_zoro.jpg" alt="procurado_zoro">
+                <div class="descricao">
+                    <p>Roronoa Zoro</p>
+                    <p>Imediato</p>
+                    <P>Recompensa: 320.000.000</P>
                 </div>
+            </div>
 
-                <div class="personagens">
-                    <img onclick="cadastrar_voto(2)" src="./imgs/icon_zoro.jpg" alt="procurado_zoro">
+            <div id="nami" class="personagens">
+                <img onclick="cadastrar_voto(3)" src="./imgs/nami_icon.jpg" alt="procurada_nami">
+                <div class="descricao">
+                    <p>Nami</p>
+                    <p>Navegadora</p>
+                    <P>Recompensa: 66.000.000</P>
                 </div>
+            </div>
 
-                <div class="personagens">
-                    <img onclick="cadastrar_voto(3)" src="./imgs/nami_icon.jpg" alt="procurada_nami">
+        </div>
+
+        <div class="grupo2">
+
+            <div id="usopp" class="personagens">
+                <img onclick="cadastrar_voto(4)" src="./imgs/icon_usopp.jpg" alt="procurado_usopp">
+                <div class="descricao">
+                    <p>God Usopp</p>
+                    <p>Atirador</p>
+                    <P>Recompensa: 200.000.000</P>
+                </div>
+            </div>
+
+            <div id="sanji" class="personagens">
+                <img onclick="cadastrar_voto(5)" src="./imgs/icon_sanji.jpg" alt="procurado_sanji">
+                <div class="descricao">
+                    <p>Vinsmoke Sanji</p>
+                    <p>Cozinheiro</p>
+                    <P>Recompensa: 330.000.000</P>
+                </div>
+            </div>
+
+            <div id="chopper" class="personagens">
+                <img onclick="cadastrar_voto(6)" src="./imgs/icon_chopper.jpg" alt="procurado_chopper">
+                <div class="descricao">
+                    <p>Tony Tony Chopper</p>
+                    <p>Médico</p>
+                    <P>Recompensa: 100</P>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="grupo3">
+
+            <div id="robin" class="personagens">
+                <img onclick="cadastrar_voto(7)" src="./imgs/icon_robin.jpg" alt="procurada_robin">
+                <div class="descricao">
+                    <p>Nico Robin</p>
+                    <p>Arqueóloga</p>
+                    <P>Recompensa: 130.000.000</P>
+                </div>
+            </div>
+
+            <div id="franky" class="personagens">
+                <img onclick="cadastrar_voto(8)" src="./imgs/icon_franky.jpg" alt="procurado_franky">
+                <div class="descricao">
+                    <p>Ciborgue Franky</p>
+                    <p>Carpinteiro Naval</p>
+                    <P>Recompensa: 94.000.00</P>
+                </div>
+            </div>
+
+            <div id="brook" class="personagens">
+                <img onclick="cadastrar_voto(9) " src="./imgs/icon_brook.jpg" alt="procurado_brook">
+                <div class="descricao">
+                    <p>Brook</p>
+                    <p>Músico</p>
+                    <P>Recompensa: 83.000.000</P>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="grupo4">
+
+            <div id="jinbe" class="personagens">
+                <img onclick="cadastrar_voto(10)" src="./imgs/icon_jinbe.jpg" alt="procurado_jinbe">
+                <div class="descricao">
+                    <p>Jinbe</p>
+                    <p>Timoneiro</p>
+                    <P>Recompensa: <br>438.000.000</P>
                 </div>
 
             </div>
 
-            <div class="grupo2">
+            <div class="valor_total">
 
-                <div class="personagens">
-                    <img onclick="cadastrar_voto(4)" src="./imgs/icon_usopp.jpg" alt="procurado_usopp">
-                </div>
-
-                <div class="personagens">
-                    <img onclick="cadastrar_voto(5)" src="./imgs/icon_sanji.jpg" alt="procurado_sanji">
-                </div>
-
-                <div class="personagens">
-                    <img onclick="cadastrar_voto(6)" src="./imgs/icon_chopper.jpg" alt="procurado_chopper">
-                </div>
-
-            </div>
-
-            <div class="grupo3">
-
-                <div class="personagens">
-                    <img onclick="cadastrar_voto(7)" src="./imgs/icon_robin.jpg" alt="procurada_robin">
-                </div>
-
-                <div class="personagens">
-                    <img onclick="cadastrar_voto(8)" src="./imgs/icon_franky.jpg" alt="procurado_franky">
-                </div>
-
-                <div class="personagens">
-                    <img onclick="cadastrar_voto(9) "src="./imgs/icon_brook.jpg" alt="procurado_brook">
-                </div>
-
-            </div>
-
-            <div class="grupo4">
-
-                <div class="personagens">
-                    <img onclick="cadastrar_voto(10)" src="./imgs/icon_jinbe.jpg" alt="procurado_jinbe">
-                </div>
+                <p> Reompensa total do bando:
+                    3.095.000.100
+                </p>
 
             </div>
 
         </div>
 
-    </section>
+    </div>
+
+    <div class="container2">
+
+        <div class="texto">
+            <h1>Vote no seu pirata do Barba Branca favorito </h1>
+            <h3>Para votar clique na imagem!</h3>
+        </div>
+
+        <div class="grupo5">
+
+            <div id="luffy" class="personagens">
+                <img onclick="cadastrar_voto(11)" src="./imgs/icon_newgate.jpg" alt="procurado_luffy">
+                <div class="descricao">
+                    <p>Edward Newgate</p>
+                    <p>Capitão</p>
+                    <P>Recompensa: 5.046.000.000</P>
+                </div>
+            </div>
+
+            <div id="zoro" class="personagens">
+                <img onclick="cadastrar_voto(12)" src="./imgs/icon_marco.jpg" alt="procurado_zoro">
+                <div class="descricao">
+                    <p>Marco a Fênix</p>
+                    <p>Capitão da primeira divisão</p>
+                    <P>Recompensa: 1,374,000,000</P>
+                </div>
+            </div>
+
+            <div id="nami" class="personagens">
+                <img onclick="cadastrar_voto(13)" src="./imgs/icon_ace.jpg" alt="procurada_nami">
+                <div class="descricao">
+                    <p>Portgas D. Ace</p>
+                    <p>Capitão da segunda divisão</p>
+                    <P>Recompensa: 550.000.000</P>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="grupo6">
+
+            <div id="robin" class="personagens">
+                <img onclick="cadastrar_voto(14)" src="./imgs/icon_vista.jpg" alt="procurado_luffy">
+                <div class="descricao">
+                    <p>Vista</p>
+                    <p>Capitão da terceira divisão</p>
+                    <P>Recompensa: 600.000.000</P>
+                </div>
+            </div>
+
+            <div id="zoro" class="personagens">
+                <img onclick="cadastrar_voto(15)" src="./imgs/icon_jozu.jpg" alt="procurado_zoro">
+                <div class="descricao">
+                    <p>Diamond Jozu</p>
+                    <p>Capitão da quarta divisão</p>
+                    <P>Recompensa: 509.000.000</P>
+                </div>
+            </div>
+
+            <div id="nami" class="personagens">
+                <img onclick="cadastrar_voto(16)" src="./imgs/icon_squard.jpg" alt="procurada_nami">
+                <div class="descricao">
+                    <p>Squard</p>
+                    <p>Capitão aliado</p>
+                    <P>Recompensa: 420.000.000</P>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="grupo7">
+
+            <div id="jinbe" class="personagens">
+                <img onclick="cadastrar_voto(17)" src="./imgs/icon_oden.jpg" alt="procurado_jinbe">
+                <div class="descricao">
+                    <p>Kozuki Oden</p>
+                    <p>Imediato</p>
+                    <P>Recompensa: <br>838.000.000</P>
+                </div>
+
+            </div>
+
+            <div class="valor_total">
+
+                <p> Reompensa total do bando:
+                    3.095.000.100
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container3">
+
+        <div class="texto">
+            <h1>Vote no seu pirata do Bando do Roger favorito </h1>
+            <h3>Para votar clique na imagem!</h3>
+        </div>
+
+        <div class="grupo8">
+
+            <div id="luffy" class="personagens">
+                <img onclick="cadastrar_voto(18)" src="./imgs/icon_roger.jpg" alt="procurado_luffy">
+                <div class="descricao">
+                    <p>Gol D. Roger</p>
+                    <p>Capitão</p>
+                    <P>Recompensa: 5.046.000.000</P>
+                </div>
+            </div>
+
+            <div id="zoro" class="personagens">
+                <img onclick="cadastrar_voto(19)" src="./imgs/icon_rayleigh.jpg" alt="procurado_zoro">
+                <div class="descricao">
+                    <p>Silvers Rayleigh</p>
+                    <p>Imediato</p>
+                    <P>Recompensa: 1,374,000,000</P>
+                </div>
+            </div>
+
+            <div id="nami" class="personagens">
+                <img onclick="cadastrar_voto(20)" src="./imgs/icon_gaban.jpg" alt="procurada_nami">
+                <div class="descricao">
+                    <p>Gaban</p>
+                    <p>Timoneiro</p>
+                    <P>Recompensa: 550.000.000</P>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="grupo9">
+
+            <div id="robin" class="personagens">
+                <img onclick="cadastrar_voto(21)" src="./imgs/icon_crocus.jpg" alt="procurado_luffy">
+                <div class="descricao">
+                    <p>Crocus</p>
+                    <p>Médico</p>
+                    <P>Recompensa: 600.000.000</P>
+                </div>
+            </div>
+
+            <div id="zoro" class="personagens">
+                <img onclick="cadastrar_voto(22)" src="./imgs/icon_sunbell.jpg" alt="procurado_zoro">
+                <div class="descricao">
+                    <p>Sunbell</p>
+                    <p>Carpinteiro Naval</p>
+                    <P>Recompensa: 509.000.000</P>
+                </div>
+            </div>
+
+            <div id="nami" class="personagens">
+                <img onclick="cadastrar_voto(23)" src="./imgs/icon_shanks.jpg" alt="procurada_nami">
+                <div class="descricao">
+                    <p>Shanks</p>
+                    <p>Tripulante</p>
+                    <P>Recompensa: 420.000.000</P>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="grupo10">
+
+            <div id="jinbe" class="personagens">
+                <img onclick="cadastrar_voto(24)" src="./imgs/icon_buggy.jpg" alt="procurado_jinbe">
+                <div class="descricao">
+                    <p>Tripulante</p>
+                    <p>Imediato</p>
+                    <P>Recompensa: <br>838.000.000</P>
+                </div>
+
+            </div>
+
+            <div class="valor_total">
+
+                <p> Reompensa total do bando:
+                    3.095.000.100
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div class="graficos">
+
+        <div class="dashboards">
+
+            <div>
+                <canvas id="myChart"></canvas>
+            </div>
+
+        </div>
+
+    </div>
+
 
 </body>
 
 <script src="./js/personagens.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    const labels = [
+        'Luffy',
+        'Zoro',
+        'Nami',
+        'Usopp',
+        'Sanji',
+        'Chopper',
+        'Robin',
+        'Franky',
+        'Brook',
+        'Jinbe',
+    ];
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'My First dataset',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [100, 250, 600, 240, 500, 700, 800],
+        }]
+    };
+
+    const config = {
+        type: 'bar',
+        data: data,
+        options: {}
+    };
+</script>
+
+<script>
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+</script>
 
 </html>
