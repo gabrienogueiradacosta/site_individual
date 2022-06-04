@@ -46,7 +46,7 @@ nav {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.233);
+    background-color: rgba(0, 0, 0, 0.697);
     background-size: 200px;
     background-position: center;
     transition: 1s;
@@ -113,11 +113,11 @@ nav {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.233);
+    background-color: rgba(0, 0, 0, 0.597);
     background-size: 200px;
     background-position: center;
     transition: 1s;
-    background-image: url(../imgs/procurado_luffy.jpg);
+    background-image: url(../imgs/procurado_newgate.jpg);
 }
 
 .grupo5 {
@@ -127,6 +127,7 @@ nav {
     align-items: center;
     justify-content: space-evenly;
 }
+
 .grupo6 {
     width: 100%;
     height: 30vh;
@@ -149,11 +150,11 @@ nav {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.233);
+    background-color: rgba(0, 0, 0, 0.549);
     background-size: 200px;
     background-position: center;
     transition: 1s;
-    background-image: url(../imgs/procurado_luffy.jpg);
+    background-image: url(../imgs/procurado_roger.jpg);
 }
 
 .grupo8 {
@@ -180,7 +181,6 @@ nav {
     justify-content: space-evenly;
 }
 
-
 img {
     width: 45%;
     height: 25vh;
@@ -189,6 +189,12 @@ img {
     margin-top: 4px;
     border-radius: 10px;
     cursor: pointer;
+    transition: 2s;
+}
+
+img:hover{
+    transform: scale(1.03);
+    transition: 2s;
 }
 
 .personagens {
@@ -199,6 +205,12 @@ img {
     background-color: #000;
     border-radius: 10px;
     display: flex;
+    transition: 2s;
+}
+
+.personagens:hover{
+    transform: scale(1.08);
+    transition: 2s;
 }
 
 .personagens p {
@@ -209,7 +221,8 @@ img {
 
 .valor_total {
     background-image: url(../imgs/icon_op.png);
-    background-position: 40px;
+    background-position: 100px;
+    background-repeat: no-repeat;
     width: 35%;
     font-size: 30px;
     text-align: center;
@@ -217,6 +230,43 @@ img {
     border: #000 solid;
     border-radius: 10px;
     background-color: #000;
+}
+
+.valor_total_newgate {
+    background-image: url(../imgs/jolly_roger_newgate.jpg);
+    background-position: 50px;
+    background-repeat: no-repeat;
+    width: 35%;
+    font-size: 30px;
+    text-align: center;
+    color: #fff;
+    border: #000 solid;
+    border-radius: 20px;
+    background-color: #000;
+}
+.valor_total_roger {
+    background-image: url(../imgs/bandeira_roger.webp);
+    background-position: 70px;
+    background-repeat: no-repeat;
+    width: 35%;
+    font-size: 30px;
+    text-align: center;
+    color: #fff;
+    border: #000 solid;
+    border-radius: 20px;
+    background-color: #000;
+}
+
+.valor_total p {
+    background-color: rgba(0, 0, 0, 0.937);
+}
+
+.valor_total_newgate p {
+    background-color: rgba(0, 0, 0, 0.924);
+}
+
+.valor_total_roger p {
+    background-color: rgba(0, 0, 0, 0.901);
 }
 
 #luffy {

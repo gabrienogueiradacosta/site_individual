@@ -10,9 +10,8 @@
     <script src="js/personagens.js"></script>
     <link rel="stylesheet" href="./style/personagens.css">
 </head>
-<div id="cartazes_procurados"></div>
 
-<body>
+<body onload="dashboard()">
 
     <nav>
         <img onclick="inicio()" class="logo" src="./imgs/tatoo.jpg" alt="">
@@ -148,7 +147,7 @@
 
     </div>
 
-    <div class="container2">
+    <div id="body_img2" class="container2">
 
         <div class="texto">
             <h1>Vote no seu pirata do Barba Branca favorito </h1>
@@ -157,8 +156,8 @@
 
         <div class="grupo5">
 
-            <div id="luffy" class="personagens">
-                <img onclick="cadastrar_voto(11)" src="./imgs/icon_newgate.jpg" alt="procurado_luffy">
+            <div id="newgate" class="personagens">
+                <img onclick="cadastrar_voto2(11)" src="./imgs/icon_newgate.jpg" alt="procurado_luffy">
                 <div class="descricao">
                     <p>Edward Newgate</p>
                     <p>Capitão</p>
@@ -166,8 +165,8 @@
                 </div>
             </div>
 
-            <div id="zoro" class="personagens">
-                <img onclick="cadastrar_voto(12)" src="./imgs/icon_marco.jpg" alt="procurado_zoro">
+            <div id="marco" class="personagens">
+                <img onclick="cadastrar_voto2(12)" src="./imgs/icon_marco.jpg" alt="procurado_zoro">
                 <div class="descricao">
                     <p>Marco a Fênix</p>
                     <p>Capitão da primeira divisão</p>
@@ -175,8 +174,8 @@
                 </div>
             </div>
 
-            <div id="nami" class="personagens">
-                <img onclick="cadastrar_voto(13)" src="./imgs/icon_ace.jpg" alt="procurada_nami">
+            <div id="ace" class="personagens">
+                <img onclick="cadastrar_voto2(13)" src="./imgs/icon_ace.jpg" alt="procurada_nami">
                 <div class="descricao">
                     <p>Portgas D. Ace</p>
                     <p>Capitão da segunda divisão</p>
@@ -188,8 +187,8 @@
 
         <div class="grupo6">
 
-            <div id="robin" class="personagens">
-                <img onclick="cadastrar_voto(14)" src="./imgs/icon_vista.jpg" alt="procurado_luffy">
+            <div id="vista" class="personagens">
+                <img onclick="cadastrar_voto2(14)" src="./imgs/icon_vista.jpg" alt="procurado_luffy">
                 <div class="descricao">
                     <p>Vista</p>
                     <p>Capitão da terceira divisão</p>
@@ -197,8 +196,8 @@
                 </div>
             </div>
 
-            <div id="zoro" class="personagens">
-                <img onclick="cadastrar_voto(15)" src="./imgs/icon_jozu.jpg" alt="procurado_zoro">
+            <div id="jozu" class="personagens">
+                <img onclick="cadastrar_voto2(15)" src="./imgs/icon_jozu.jpg" alt="procurado_zoro">
                 <div class="descricao">
                     <p>Diamond Jozu</p>
                     <p>Capitão da quarta divisão</p>
@@ -206,8 +205,8 @@
                 </div>
             </div>
 
-            <div id="nami" class="personagens">
-                <img onclick="cadastrar_voto(16)" src="./imgs/icon_squard.jpg" alt="procurada_nami">
+            <div id="squard" class="personagens">
+                <img onclick="cadastrar_voto2(16)" src="./imgs/icon_squard.jpg" alt="procurada_nami">
                 <div class="descricao">
                     <p>Squard</p>
                     <p>Capitão aliado</p>
@@ -219,8 +218,8 @@
 
         <div class="grupo7">
 
-            <div id="jinbe" class="personagens">
-                <img onclick="cadastrar_voto(17)" src="./imgs/icon_oden.jpg" alt="procurado_jinbe">
+            <div id="oden" class="personagens">
+                <img onclick="cadastrar_voto2(17)" src="./imgs/icon_oden.jpg" alt="procurado_jinbe">
                 <div class="descricao">
                     <p>Kozuki Oden</p>
                     <p>Imediato</p>
@@ -229,10 +228,10 @@
 
             </div>
 
-            <div class="valor_total">
+            <div class="valor_total_newgate">
 
                 <p> Reompensa total do bando:
-                    3.095.000.100
+                    8.842.000.000
                 </p>
 
             </div>
@@ -241,7 +240,7 @@
 
     </div>
 
-    <div class="container3">
+    <div id="body_img3" class="container3">
 
         <div class="texto">
             <h1>Vote no seu pirata do Bando do Roger favorito </h1>
@@ -250,26 +249,26 @@
 
         <div class="grupo8">
 
-            <div id="luffy" class="personagens">
-                <img onclick="cadastrar_voto(18)" src="./imgs/icon_roger.jpg" alt="procurado_luffy">
+            <div id="roger" class="personagens">
+                <img onclick="cadastrar_voto3(18)" src="./imgs/icon_roger.jpg" alt="procurado_luffy">
                 <div class="descricao">
                     <p>Gol D. Roger</p>
                     <p>Capitão</p>
-                    <P>Recompensa: 5.046.000.000</P>
+                    <P>Recompensa: 5.564.800.000</P>
                 </div>
             </div>
 
-            <div id="zoro" class="personagens">
-                <img onclick="cadastrar_voto(19)" src="./imgs/icon_rayleigh.jpg" alt="procurado_zoro">
+            <div id="rayleigh" class="personagens">
+                <img onclick="cadastrar_voto3(19)" src="./imgs/icon_rayleigh.jpg" alt="procurado_zoro">
                 <div class="descricao">
                     <p>Silvers Rayleigh</p>
                     <p>Imediato</p>
-                    <P>Recompensa: 1,374,000,000</P>
+                    <P>Recompensa: 2,400,000,000</P>
                 </div>
             </div>
 
-            <div id="nami" class="personagens">
-                <img onclick="cadastrar_voto(20)" src="./imgs/icon_gaban.jpg" alt="procurada_nami">
+            <div id="gaban" class="personagens">
+                <img onclick="cadastrar_voto3(20)" src="./imgs/icon_gaban.jpg" alt="procurada_nami">
                 <div class="descricao">
                     <p>Gaban</p>
                     <p>Timoneiro</p>
@@ -281,30 +280,30 @@
 
         <div class="grupo9">
 
-            <div id="robin" class="personagens">
-                <img onclick="cadastrar_voto(21)" src="./imgs/icon_crocus.jpg" alt="procurado_luffy">
+            <div id="crocus" class="personagens">
+                <img onclick="cadastrar_voto3(21)" src="./imgs/icon_crocus.jpg" alt="procurado_luffy">
                 <div class="descricao">
                     <p>Crocus</p>
                     <p>Médico</p>
-                    <P>Recompensa: 600.000.000</P>
+                    <P>Recompensa: 250.000.000</P>
                 </div>
             </div>
 
-            <div id="zoro" class="personagens">
-                <img onclick="cadastrar_voto(22)" src="./imgs/icon_sunbell.jpg" alt="procurado_zoro">
+            <div id="sunbell" class="personagens">
+                <img onclick="cadastrar_voto3(22)" src="./imgs/icon_sunbell.jpg" alt="procurado_zoro">
                 <div class="descricao">
                     <p>Sunbell</p>
                     <p>Carpinteiro Naval</p>
-                    <P>Recompensa: 509.000.000</P>
+                    <P>Recompensa: 300.000.000</P>
                 </div>
             </div>
 
-            <div id="nami" class="personagens">
-                <img onclick="cadastrar_voto(23)" src="./imgs/icon_shanks.jpg" alt="procurada_nami">
+            <div id="shanks" class="personagens">
+                <img onclick="cadastrar_voto3(23)" src="./imgs/icon_shanks.jpg" alt="procurada_nami">
                 <div class="descricao">
                     <p>Shanks</p>
                     <p>Tripulante</p>
-                    <P>Recompensa: 420.000.000</P>
+                    <P>Recompensa: 0</P>
                 </div>
             </div>
 
@@ -312,20 +311,20 @@
 
         <div class="grupo10">
 
-            <div id="jinbe" class="personagens">
-                <img onclick="cadastrar_voto(24)" src="./imgs/icon_buggy.jpg" alt="procurado_jinbe">
+            <div id="buggy" class="personagens">
+                <img onclick="cadastrar_voto3(24)" src="./imgs/icon_buggy.jpg" alt="procurado_jinbe">
                 <div class="descricao">
+                    <p>Buggy</p>
                     <p>Tripulante</p>
-                    <p>Imediato</p>
-                    <P>Recompensa: <br>838.000.000</P>
+                    <P>Recompensa: <br>0</P>
                 </div>
 
             </div>
 
-            <div class="valor_total">
+            <div class="valor_total_roger">
 
                 <p> Reompensa total do bando:
-                    3.095.000.100
+                    8.794.800.000
                 </p>
 
             </div>
@@ -334,69 +333,192 @@
 
     </div>
 
-
-
-
-
-
-
-
-
-
-    <div class="graficos">
-
-        <div class="dashboards">
-
-            <div>
-                <canvas id="myChart"></canvas>
-            </div>
-
-        </div>
-
-    </div>
-
-
 </body>
 
-<script src="./js/personagens.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<script>
-    const labels = [
-        'Luffy',
-        'Zoro',
-        'Nami',
-        'Usopp',
-        'Sanji',
-        'Chopper',
-        'Robin',
-        'Franky',
-        'Brook',
-        'Jinbe',
-    ];
-
-    const data = {
-        labels: labels,
-        datasets: [{
-            label: 'My First dataset',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [100, 250, 600, 240, 500, 700, 800],
-        }]
-    };
-
-    const config = {
-        type: 'bar',
-        data: data,
-        options: {}
-    };
-</script>
-
-<script>
-    const myChart = new Chart(
-        document.getElementById('myChart'),
-        config
-    );
-</script>
-
 </html>
+
+<script>
+
+    var votos_luffy = 0;
+    var votos_zoro = 0;
+    var votos_nami = 0;
+    var votos_usopp = 0;
+    var votos_sanji = 0;
+    var votos_chopper = 0;
+    var votos_robin = 0;
+    var votos_franky = 0;
+    var votos_brook = 0;
+    var votos_jinbe = 0;
+    var votos_newgate = 0;
+
+    var luffy = "";
+    var zoro = "";
+    var nami = "";
+    var usopp = "";
+    var sanji = "";
+    var chopper = "";
+    var robin = "";
+    var franky = "";
+    var brook = "";
+    var jinbe = "";
+    var newgate = "";
+
+
+    function dashboard() {
+
+        fetch("/usuarios/pegar_voto").then(function (resposta) {
+            if (resposta.ok) {
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+                    var teste = resposta
+                    votos_luffy = resposta[0].voto_recebido;
+                    luffy = resposta[0].nome;
+
+                    if (resposta[1]) {
+                        votos_zoro = resposta[1].voto_recebido;
+                        zoro = resposta[1].nome;
+                    }
+                    if (resposta[2]) {
+                        votos_nami = resposta[2].voto_recebido;
+                        nami = resposta[2].nome;
+                    }
+                    if (resposta[3]) {
+                        votos_usopp = resposta[3].voto_recebido;
+                        usopp = resposta[3].nome;
+                    }
+                    if (resposta[4]) {
+                        votos_sanji = resposta[4].voto_recebido;
+                        sanji = resposta[4].nome;
+                    }
+                    if (resposta[5]) {
+                        votos_chopper = resposta[5].voto_recebido;
+                        chopper = resposta[5].nome;
+                    }
+                    if (resposta[6]) {
+                        votos_robin = resposta[6].voto_recebido;
+                        robin = resposta[6].nome;
+                    }
+                    if (resposta[7]) {
+                        votos_franky = resposta[7].voto_recebido;
+                        franky = resposta[7].nome;
+                    }
+                    if (resposta[8]) {
+                        votos_brook = resposta[8].voto_recebido;
+                        brook = resposta[8].nome;
+                    }
+                    if (resposta[9]) {
+                        votos_jinbe = resposta[9].voto_recebido;
+                        jinbe = resposta[9].nome;
+                    }
+
+                    graficos1()
+
+                });
+
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+        });
+
+    }
+
+    function dashboard2() {
+        fetch("/usuarios/pegar_voto2").then(function (resposta) {
+            if (resposta.ok) {
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+                    var teste = resposta
+                    votos_newgate = resposta[0].voto_recebido;
+                    newgate = resposta[0].nome;
+
+                    if (resposta[1]) {
+                        votos_zoro = resposta[1].voto_recebido;
+                        zoro = resposta[1].nome;
+                    }
+                    if (resposta[2]) {
+                        votos_nami = resposta[2].voto_recebido;
+                        nami = resposta[2].nome;
+                    }
+                    if (resposta[3]) {
+                        votos_usopp = resposta[3].voto_recebido;
+                        usopp = resposta[3].nome;
+                    }
+                    if (resposta[4]) {
+                        votos_sanji = resposta[4].voto_recebido;
+                        sanji = resposta[4].nome;
+                    }
+                    if (resposta[5]) {
+                        votos_chopper = resposta[5].voto_recebido;
+                        chopper = resposta[5].nome;
+                    }
+                    if (resposta[6]) {
+                        votos_robin = resposta[6].voto_recebido;
+                        robin = resposta[6].nome;
+                    }
+
+                    graficos1()
+
+                });
+
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+        });
+
+    }
+
+
+    function dashboard3() {
+        fetch("/usuarios/pegar_voto3").then(function (resposta) {
+            if (resposta.ok) {
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+                    var teste = resposta
+                    votos_roger = resposta[0].voto_recebido;
+                    roger = resposta[0].nome;
+
+                    if (resposta[1]) {
+                        votos_zoro = resposta[1].voto_recebido;
+                        zoro = resposta[1].nome;
+                    }
+                    if (resposta[2]) {
+                        votos_nami = resposta[2].voto_recebido;
+                        nami = resposta[2].nome;
+                    }
+                    if (resposta[3]) {
+                        votos_usopp = resposta[3].voto_recebido;
+                        usopp = resposta[3].nome;
+                    }
+                    if (resposta[4]) {
+                        votos_sanji = resposta[4].voto_recebido;
+                        sanji = resposta[4].nome;
+                    }
+                    if (resposta[5]) {
+                        votos_chopper = resposta[5].voto_recebido;
+                        chopper = resposta[5].nome;
+                    }
+                    if (resposta[6]) {
+                        votos_robin = resposta[6].voto_recebido;
+                        robin = resposta[6].nome;
+                    }
+
+                    graficos1()
+
+                });
+
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+        });
+
+    }
+</script>

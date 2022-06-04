@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+
+<body>
+
+    <div id="grafico1" class="dashboard">
+        <canvas id="myChart1"></canvas>
+    </div>
+
+    <div id="grafico2" class="dashboard">
+        <canvas id="myChart2"></canvas>
+    </div>
+
+    <div id="grafico3" class="dashboard">
+        <canvas id="myChart3"></canvas>
+    </div>
+
+</body>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    const labels1 = [
+        'Luffy',
+        'Zoro',
+        'Nami',
+        'Usopp',
+        'Sanji',
+        'Chopper',
+        'Robin',
+        'Franky',
+        'Brook',
+        'Jinbe',
+    ];
+
+    const data1 = {
+        labels: labels1,
+        datasets: [{
+            label: 'Votos bando do Chapéu de Palha',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [],
+        }]
+    };
+
+    const config1 = {
+        type: 'bar',
+        data: data1,
+        options: {}
+    };
+</script>
+
+<script>
+    const labels2 = [
+        'Newgate',
+        'Marco',
+        'Ace',
+        'Vista',
+        'Jozu',
+        'Squard',
+        'Oden',
+    ];
+
+    const data2 = {
+        labels: labels2,
+        datasets: [{
+            label: 'Votos bando do Barba Branca',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [],
+        }]
+    };
+
+    const config2 = {
+        type: 'bar',
+        data: data2,
+        options: {}
+    };
+</script>
+
+<script>
+    const labels3 = [
+        'Newgate',
+        'Marco',
+        'Ace',
+        'Vista',
+        'Jozu',
+        'Squard',
+        'Oden',
+    ];
+
+    const data3 = {
+        labels: labels3,
+        datasets: [{
+            label: 'Votos bando do Gol D. Roger',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [],
+        }]
+    };
+
+    const config3 = {
+        type: 'bar',
+        data: data3,
+        options: {}
+    };
+</script>
+
+<script>
+    const myChart = new Chart(
+        document.getElementById('myChart1'),
+        config1
+    );
+
+</script>
+
+<script>
+    const myChart2 = new Chart(
+        document.getElementById('myChart2'),
+        config2
+    );
+
+</script>
+
+<script>
+    const myChart3 = new Chart(
+        document.getElementById('myChart3'),
+        config3
+    );
+
+</script>
+
+</html>
