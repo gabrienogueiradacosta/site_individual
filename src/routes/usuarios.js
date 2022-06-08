@@ -20,6 +20,9 @@ router.get("/pegar_voto2", function (req, res) {
 router.get("/pegar_voto3", function (req, res) {
     usuarioController.pegar_voto3(req, res);
 });
+router.post("/votos_grafico", function (req, res) {
+    usuarioController.votos_grafico(req, res);
+});
 
 //Recebendo os dados do html e direcionando para a função cadastrar de usuarioController.js
 router.post("/cadastrar", function (req, res) {
@@ -39,5 +42,6 @@ router.post("/cadastrar_voto2", function (req, res) {
 router.post("/cadastrar_voto3", function (req, res) {
     usuarioController.cadastrar_voto3(req, res);
 });
+
 
 module.exports = router;

@@ -11,15 +11,17 @@
     <link rel="stylesheet" href="./style/personagens.css">
 </head>
 
-<body onload="dashboard()">
+<body>
 
     <nav>
         <img onclick="inicio()" class="logo" src="./imgs/tatoo.jpg" alt="">
         <ul class="lista_nav">
             <li><a href="index.html">Início</a></li>
             <li><a href="personagens.html">Personagens</a></li>
+            <li><a href="dashboard.html">Dashboards</a></li>
             <li><a href="cadastro.html">Cadastro</a></li>
             <li><a href="login.html">Login</a></li>
+            <li><a onclick="sair()">Log-off</a></li>
         </ul>
     </nav>
 
@@ -333,192 +335,19 @@
 
     </div>
 
+    <footer>
+        <div class="footer">
+            <p>Gabriel Nogueira Da Costa © 2022</p>
+        </div>
+    </footer>
+
 </body>
 
 </html>
-
-<script>
-
-    var votos_luffy = 0;
-    var votos_zoro = 0;
-    var votos_nami = 0;
-    var votos_usopp = 0;
-    var votos_sanji = 0;
-    var votos_chopper = 0;
-    var votos_robin = 0;
-    var votos_franky = 0;
-    var votos_brook = 0;
-    var votos_jinbe = 0;
-    var votos_newgate = 0;
-
-    var luffy = "";
-    var zoro = "";
-    var nami = "";
-    var usopp = "";
-    var sanji = "";
-    var chopper = "";
-    var robin = "";
-    var franky = "";
-    var brook = "";
-    var jinbe = "";
-    var newgate = "";
-
-
-    function dashboard() {
-
-        fetch("/usuarios/pegar_voto").then(function (resposta) {
-            if (resposta.ok) {
-
-                resposta.json().then(function (resposta) {
-                    console.log("Dados recebidos: ", JSON.stringify(resposta));
-                    var teste = resposta
-                    votos_luffy = resposta[0].voto_recebido;
-                    luffy = resposta[0].nome;
-
-                    if (resposta[1]) {
-                        votos_zoro = resposta[1].voto_recebido;
-                        zoro = resposta[1].nome;
-                    }
-                    if (resposta[2]) {
-                        votos_nami = resposta[2].voto_recebido;
-                        nami = resposta[2].nome;
-                    }
-                    if (resposta[3]) {
-                        votos_usopp = resposta[3].voto_recebido;
-                        usopp = resposta[3].nome;
-                    }
-                    if (resposta[4]) {
-                        votos_sanji = resposta[4].voto_recebido;
-                        sanji = resposta[4].nome;
-                    }
-                    if (resposta[5]) {
-                        votos_chopper = resposta[5].voto_recebido;
-                        chopper = resposta[5].nome;
-                    }
-                    if (resposta[6]) {
-                        votos_robin = resposta[6].voto_recebido;
-                        robin = resposta[6].nome;
-                    }
-                    if (resposta[7]) {
-                        votos_franky = resposta[7].voto_recebido;
-                        franky = resposta[7].nome;
-                    }
-                    if (resposta[8]) {
-                        votos_brook = resposta[8].voto_recebido;
-                        brook = resposta[8].nome;
-                    }
-                    if (resposta[9]) {
-                        votos_jinbe = resposta[9].voto_recebido;
-                        jinbe = resposta[9].nome;
-                    }
-
-                    graficos1()
-
-                });
-
-            } else {
-                throw ('Houve um erro na API!');
-            }
-        }).catch(function (resposta) {
-            console.error(resposta);
-        });
-
-    }
-
-    function dashboard2() {
-        fetch("/usuarios/pegar_voto2").then(function (resposta) {
-            if (resposta.ok) {
-
-                resposta.json().then(function (resposta) {
-                    console.log("Dados recebidos: ", JSON.stringify(resposta));
-                    var teste = resposta
-                    votos_newgate = resposta[0].voto_recebido;
-                    newgate = resposta[0].nome;
-
-                    if (resposta[1]) {
-                        votos_zoro = resposta[1].voto_recebido;
-                        zoro = resposta[1].nome;
-                    }
-                    if (resposta[2]) {
-                        votos_nami = resposta[2].voto_recebido;
-                        nami = resposta[2].nome;
-                    }
-                    if (resposta[3]) {
-                        votos_usopp = resposta[3].voto_recebido;
-                        usopp = resposta[3].nome;
-                    }
-                    if (resposta[4]) {
-                        votos_sanji = resposta[4].voto_recebido;
-                        sanji = resposta[4].nome;
-                    }
-                    if (resposta[5]) {
-                        votos_chopper = resposta[5].voto_recebido;
-                        chopper = resposta[5].nome;
-                    }
-                    if (resposta[6]) {
-                        votos_robin = resposta[6].voto_recebido;
-                        robin = resposta[6].nome;
-                    }
-
-                    graficos1()
-
-                });
-
-            } else {
-                throw ('Houve um erro na API!');
-            }
-        }).catch(function (resposta) {
-            console.error(resposta);
-        });
-
-    }
-
-
-    function dashboard3() {
-        fetch("/usuarios/pegar_voto3").then(function (resposta) {
-            if (resposta.ok) {
-
-                resposta.json().then(function (resposta) {
-                    console.log("Dados recebidos: ", JSON.stringify(resposta));
-                    var teste = resposta
-                    votos_roger = resposta[0].voto_recebido;
-                    roger = resposta[0].nome;
-
-                    if (resposta[1]) {
-                        votos_zoro = resposta[1].voto_recebido;
-                        zoro = resposta[1].nome;
-                    }
-                    if (resposta[2]) {
-                        votos_nami = resposta[2].voto_recebido;
-                        nami = resposta[2].nome;
-                    }
-                    if (resposta[3]) {
-                        votos_usopp = resposta[3].voto_recebido;
-                        usopp = resposta[3].nome;
-                    }
-                    if (resposta[4]) {
-                        votos_sanji = resposta[4].voto_recebido;
-                        sanji = resposta[4].nome;
-                    }
-                    if (resposta[5]) {
-                        votos_chopper = resposta[5].voto_recebido;
-                        chopper = resposta[5].nome;
-                    }
-                    if (resposta[6]) {
-                        votos_robin = resposta[6].voto_recebido;
-                        robin = resposta[6].nome;
-                    }
-
-                    graficos1()
-
-                });
-
-            } else {
-                throw ('Houve um erro na API!');
-            }
-        }).catch(function (resposta) {
-            console.error(resposta);
-        });
-
+    <script>
+        
+    function sair(){
+        sessionStorage.clear();
+        window.location = "./login.html"
     }
 </script>

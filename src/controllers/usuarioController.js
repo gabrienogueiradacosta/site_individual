@@ -230,6 +230,23 @@ function pegar_voto3(req, res) {
             }
         );
 }
+function votos_grafico(req, res) {
+    var id = req.body.idServer
+    usuarioModel.votos_grafico(id)
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
 
 module.exports = {
     entrar,
@@ -240,6 +257,7 @@ module.exports = {
     pegar_voto,
     pegar_voto2,
     pegar_voto3,
+    votos_grafico,
     listar,
     testar
 }

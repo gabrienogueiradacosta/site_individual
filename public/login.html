@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
     <link rel="icon" href="./imgs/icon_op.png">
     <link rel="stylesheet" href="./style/login.css">
 </head>
@@ -36,7 +36,7 @@
                 <label for="senha">Senha</label>
                 <input type="password" onkeyup="verificar_senha()" name="senha" id="input_senha"
                     placeholder="Digite sua senha" required>
-                <img id="eye" onclick="senha_ver()" src="imgs/ver_senha.png" alt="" width="20px">
+                <img id="eye" onclick="senha_ver()" src="imgs/ver_senha.png">
             </div>
 
             <div class="texto">
@@ -158,5 +158,27 @@
         return false;
     }
 
+    const passwordinput = document.getElementById("input_senha");
+    const olho_aberto = document.getElementById("eye");
+
+    function senha_ver() {
+        let inputtype = passwordinput.type == "password";
+
+        if (inputtype) {
+            mostrar_senha();
+        } else {
+            esconder_senha();
+        }
+    }
+
+    function mostrar_senha() {
+        passwordinput.setAttribute("type", "text");
+        olho_aberto.setAttribute("src", "imgs/senha.png");
+    }
+
+    function esconder_senha() {
+        passwordinput.setAttribute("type", "password");
+        olho_aberto.setAttribute("src", "imgs/ver_senha.png");
+    }
 
 </script>

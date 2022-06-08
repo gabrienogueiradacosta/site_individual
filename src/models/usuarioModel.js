@@ -51,7 +51,7 @@ function cadastrar_voto2(voto_personagem, fk_usuario) {
     update usuarios set fk_voto2 = ${voto_personagem} where id_usuario = ${fk_usuario};
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
-    return database.executar(instrucao);
+    return database.executar(instrucao)
 }
 function cadastrar_voto3(voto_personagem, fk_usuario) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", voto_personagem, fk_usuario);
@@ -68,7 +68,7 @@ function cadastrar_voto3(voto_personagem, fk_usuario) {
 function pegar_voto() {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
     var instrucao = `
-    SELECT bando.nome , count(fk_luffy) as 'voto_recebido' FROM usuarios join votos_bando_luffy as bando on id_luffy = fk_luffy group by bando.nome
+    SELECT bando.nome , count(fk_voto1) as 'voto_recebido' FROM usuarios join votos_bando_luffy as bando on fk_voto1 = id_luffy group by bando.nome;
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -76,7 +76,7 @@ function pegar_voto() {
 function pegar_voto2() {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
     var instrucao = `
-    SELECT bando.nome , count(fk_newgate) as 'voto_recebido' FROM usuarios join votos_bando_newgate as bando on id_newgate = fk_newgate group by bando.nome
+    SELECT bando.nome , count(fk_voto2) as 'voto_recebido' FROM usuarios join votos_bando_newgate as bando on id_newgate = fk_voto2 group by bando.nome;
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -84,7 +84,16 @@ function pegar_voto2() {
 function pegar_voto3() {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
     var instrucao = `
-    SELECT bando.nome , count(fk_roger) as 'voto_recebido' FROM usuarios join votos_bando_roger as bando on id_roger = fk_roger group by bando.nome
+    SELECT bando.nome , count(fk_voto3) as 'voto_recebido' FROM usuarios join votos_bando_roger as bando on id_roger = fk_voto3 group by bando.nome;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function votos_grafico(id) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
+    var instrucao = `
+    SELECT fk_voto1, fk_voto2, fk_voto3 from usuarios where id_usuario = ${id};
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -99,5 +108,6 @@ module.exports = {
     pegar_voto,
     pegar_voto2,
     pegar_voto3,
+    votos_grafico,
     listar,
 };

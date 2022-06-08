@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./style/style.css">
 </head>
 
-<body>
+<body id="body_img">
     <header>
         <nav>
             <img onclick="inicio()" class="logo" src="./imgs/tatoo.jpg" alt="">
@@ -24,7 +24,6 @@
         </nav>
         <main>
             <h1 class="titulo">One Piece</h1>
-            <h2 class="subtitulo">O melhor anime do mundo!</h2>
             <p> One Piece conta as aventuras de Monkey D. Luffy, um jovem cujo corpo ganhou as propriedades de borracha
                 após ter comido uma fruta do diabo acidentalmente. Com sua tripulação, os Piratas do Chapéu de Palha,
                 Luffy explora a Grand Line em busca do tesouro mais procurado do mundo, o "One Piece", a fim de se
@@ -36,20 +35,125 @@
                 É fã da série??
             </h1>
             <h2>Faça um cadastro para votar no seu Chapéu de Palha favorito</h2>
-            <p>Cadastre-se clicando <a href="login.html"> <u>aqui</u></a>.</p>
+            <p>Cadastre-se clicando <a href="cadastro.html"> <u>aqui</u></a>.</p>
         </main>
     </header>
+
+    <div id="resumo" class="container_resumo">
+
+        <div class="titulo_resumo">
+            <h1>"O anime dos 1000 episódios"</h1>
+        </div>
+
+        <div class="conteudo">
+            <p>One Piece é conhecido por conter muitos episódios, atualmente conta com 1019 no total e continua em
+                lançamento.
+                A obra conta além dos 1019 episódios conta com 13 episódios especiais(não canônicos) e 14 filmes.
+            </p>
+        </div>
+
+        <div class="episodios">
+            <h2>Quantos episódios você já assistiu?</h2>
+            <input type="number" id="input_numero_episodios"><br>
+
+            <button onclick="contagem()">
+                Ver % de episódios
+            </button><br>
+
+            <div id="resultado"></div>
+        </div>
+
+    </div>
 
     <footer>
         <div class="footer">Gabriel Nogueira Da Costa © 2022</div>
 
     </footer>
+
 </body>
 
 </html>
 
 <script>
-    function inicio(){
-    window.location = "./index.html";
-}
+    function inicio() {
+        window.location = "./index.html";
+    }
+
+    function contagem() {
+        var episodios = Number(input_numero_episodios.value)
+
+        if(episodios == "" ||
+        episodios == 0){
+        resultado.innerHTML = "Campo vazio, digite o número de algum episódio!"
+        } 
+        else if(episodios > 1019){
+            resultado.innerHTML = "Calmô, ainda não chegou nesse ep ainda!<br> escolha um episódio entre 1 e 1019"
+        }
+        else{
+            var total_episodios = 1019
+            var tempo_episodio = 24
+            var minutos_assistidos = episodios * tempo_episodio
+            var horas_assistidas = minutos_assistidos / 60 
+             var porc_episodio = (episodios * 100) / total_episodios
+
+             if(porc_episodio <= 10 ){
+             resultado.innerHTML = ` Vish, ainda tem chão pela frente!<br>
+             Você teve ${horas_assistidas} horas assistidas no total, isso equivale a  ${porc_episodio.toFixed(1)}% do anime
+             `
+             }
+             else if(porc_episodio <= 30 ){
+             resultado.innerHTML = ` Ta curtindo a história né?<br>
+             Você teve ${horas_assistidas} horas assistidas no total, isso equivale a  ${porc_episodio.toFixed(1)}% do anime
+             `
+             }
+             else if(porc_episodio <= 60 ){
+             resultado.innerHTML = ` Já passou da metade companheiro!<br>
+             Você teve ${horas_assistidas} horas assistidas no total, isso equivale a  ${porc_episodio.toFixed(1)}% do anime
+             `
+             }
+             else if(porc_episodio <= 90 ){
+             resultado.innerHTML = ` Um Lobo do mar!!<br>
+             Você teve ${horas_assistidas} horas assistidas no total, isso equivale a  ${porc_episodio.toFixed(1)}% do anime
+             `
+             }
+             else if(porc_episodio <= 99.9){
+                resultado.innerHTML = `Pirata de respeito!<br>
+             Você teve ${horas_assistidas} horas assistidas no total, isso equivale a  ${porc_episodio.toFixed(1)}% do anime
+             ` 
+             }
+             else{
+                resultado.innerHTML = `Está nos semanais? Rei dos Piratas!!<br>
+             Você teve ${horas_assistidas} horas assistidas no total, isso equivale a  ${porc_episodio.toFixed(1)}% do anime
+             ` 
+             }
+
+        }
+    }
+
+
+/*     var img = [
+    'imgs/background.jpg',
+    'imgs/procurados.jpg',
+    'imgs/procurados.jpg',
+    'imgs/procurados.jpg',
+    'imgs/procurados.jpg',
+    'imgs/procurados.jpg'
+    ]
+    const imgs = document.getElementById("body_img");
+    const img = document.querySelectorAll("#img img");
+
+    let contador = 0;
+
+    function passarCarrossel() {
+        contador++
+        while (contador >= img.length - 6) {
+            contador = 0;
+        }
+
+        imgs.style.transform = `translateX(${-contador * 975}px)`;
+    }
+
+    setInterval(passarCarrossel, 3000) */
+
+
 </script>

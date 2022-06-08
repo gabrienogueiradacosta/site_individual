@@ -20,10 +20,10 @@ function cadastrar_voto(voto) {
 
 
             setTimeout(() => {
-                window.location = "dashboard.html";
+                window.location = "personagens.html";
             }, "2000")
 
-
+            alert("Voto Cadastrado com sucesso!")
 
         } else {
             throw ("Houve um erro ao tentar realizar o cadastro!");
@@ -58,10 +58,10 @@ function cadastrar_voto2(voto) {
 
 
             setTimeout(() => {
-                window.location = "dashboard.html";
+                window.location = "personagens.html";
             }, "2000")
 
-
+            alert("Voto Cadastrado com sucesso!")
 
         } else {
             throw ("Houve um erro ao tentar realizar o cadastro!");
@@ -99,7 +99,7 @@ function cadastrar_voto3(voto) {
                 window.location = "dashboard.html";
             }, "2000")
 
-
+            alert("Voto Cadastrado com sucesso!")
 
         } else {
             throw ("Houve um erro ao tentar realizar o cadastro!");

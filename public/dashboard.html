@@ -5,135 +5,488 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./imgs/icon_op.png">
+    <link rel="stylesheet" href="./style/dashboard.css">
     <title>Dashboard</title>
 </head>
 
-<body>
+<body onload="dashboard(), dashboard2(), dashboard3()">
+    <nav>
+        <img onclick="inicio()" class="logo" src="./imgs/tatoo.jpg" alt="">
+        <ul class="lista_nav">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="personagens.html">Personagens</a></li>
+            <li><a href="dashboard.html">Dashboards</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a onclick="sair()">Log-off</a></li>
+        </ul>
+    </nav>
 
-    <div id="grafico1" class="dashboard">
-        <canvas id="myChart1"></canvas>
-    </div>
+    <div id="container_dashboards">
+        <div class="texto">
+            <h1>Votos Bando do Chapéu de Palha</h1>
+        </div>
 
-    <div id="grafico2" class="dashboard">
-        <canvas id="myChart2"></canvas>
-    </div>
+        <div id="grafico1" class="dashboard">
+            <canvas id="myChart1"></canvas>
+        </div>
 
-    <div id="grafico3" class="dashboard">
-        <canvas id="myChart3"></canvas>
+        <br><br>
+
+        <div class="texto">
+            <h1>Votos bando barba branca</h1>
+        </div>
+
+        <div id="grafico2" class="dashboard">
+            <canvas id="myChart2"></canvas>
+        </div>
+
+        <br><br>
+
+        <div class="texto">
+            <h1>Votos Bando do Gol D. Roger</h1>
+        </div>
+        <div id="grafico3" class="dashboard">
+            <canvas id="myChart3"></canvas>
+        </div>
+
+
     </div>
 
 </body>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-    const labels1 = [
-        'Luffy',
-        'Zoro',
-        'Nami',
-        'Usopp',
-        'Sanji',
-        'Chopper',
-        'Robin',
-        'Franky',
-        'Brook',
-        'Jinbe',
-    ];
 
-    const data1 = {
-        labels: labels1,
-        datasets: [{
-            label: 'Votos bando do Chapéu de Palha',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [],
-        }]
-    };
+    function votos_grafico1() {
+        Chart.defaults.color = "#FFF";
+        const labels1 = [
+            'Luffy',
+            'Zoro',
+            'Nami',
+            'Usopp',
+            'Sanji',
+            'Chopper',
+            'Robin',
+            'Franky',
+            'Brook',
+            'Jinbe',
+        ];
 
-    const config1 = {
-        type: 'bar',
-        data: data1,
-        options: {}
-    };
-</script>
+        const data1 = {
+            labels: [],
+            datasets: [{
+                label: 'Votos bando do Chapéu de Palha',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: '#252525',
+                data: [],
+            }]
+        };
 
-<script>
-    const labels2 = [
-        'Newgate',
-        'Marco',
-        'Ace',
-        'Vista',
-        'Jozu',
-        'Squard',
-        'Oden',
-    ];
+        data1.datasets[0].data.push(voto1)
+        data1.labels.push(nome1)
 
-    const data2 = {
-        labels: labels2,
-        datasets: [{
-            label: 'Votos bando do Barba Branca',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [],
-        }]
-    };
+        if (voto2 > 0) {
+            data1.datasets[0].data.push(voto2)
+            data1.labels.push(nome2)
+        }
+        if (voto3 > 0) {
+            data1.datasets[0].data.push(voto3)
+            data1.labels.push(nome3)
+        }
+        if (voto4 > 0) {
+            data1.datasets[0].data.push(voto4)
+            data1.labels.push(nome4)
+        }
+        if (voto5 > 0) {
+            data1.datasets[0].data.push(voto5)
+            data1.labels.push(nome5)
+        }
+        if (voto6 > 0) {
+            data1.datasets[0].data.push(voto6)
+            data1.labels.push(nome6)
+        }
+        if (voto7 > 0) {
+            data1.datasets[0].data.push(voto7)
+            data1.labels.push(nome7)
+        }
+        if (voto8 > 0) {
+            data1.datasets[0].data.push(voto8)
+            data1.labels.push(nome8)
+        }
+        if (voto9 > 0) {
+            data1.datasets[0].data.push(voto9)
+            data1.labels.push(nome9)
+        }
+        if (voto10 > 0) {
+            data1.datasets[0].data.push(voto10)
+            data1.labels.push(nome10)
+        }
 
-    const config2 = {
-        type: 'bar',
-        data: data2,
-        options: {}
-    };
-</script>
+        const config1 = {
+            type: 'bar',
+            data: data1,
+            options: {}
+        };
 
-<script>
-    const labels3 = [
-        'Newgate',
-        'Marco',
-        'Ace',
-        'Vista',
-        'Jozu',
-        'Squard',
-        'Oden',
-    ];
+        const myChart = new Chart(
+            document.getElementById('myChart1'),
+            config1
+        );
 
-    const data3 = {
-        labels: labels3,
-        datasets: [{
-            label: 'Votos bando do Gol D. Roger',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [],
-        }]
-    };
+    }
 
-    const config3 = {
-        type: 'bar',
-        data: data3,
-        options: {}
-    };
-</script>
+    function votos_grafico2() {
+        Chart.defaults.color = "#FFF";
+        const labels2 = [
+            'Newgate',
+            'Marco',
+            'Ace',
+            'Vista',
+            'Jozu',
+            'Squard',
+            'Oden',
+        ];
 
-<script>
-    const myChart = new Chart(
-        document.getElementById('myChart1'),
-        config1
-    );
+        const data2 = {
+            labels: [],
+            datasets: [{
+                label: 'Votos bando do Barba Branca',
+                backgroundColor: '#92a',
+                borderColor: '#252525',
+                data: [],
+            }]
+        };
 
-</script>
+        data2.datasets[0].data.push(voto11)
+        data2.labels.push(nome11)
 
-<script>
-    const myChart2 = new Chart(
-        document.getElementById('myChart2'),
-        config2
-    );
+        if (voto12 > 0) {
+            data2.datasets[0].data.push(voto12)
+            data2.labels.push(nome12)
+        }
+        if (voto13 > 0) {
+            data2.datasets[0].data.push(voto13)
+            data2.labels.push(nome13)
+        }
+        if (voto14 > 0) {
+            data2.datasets[0].data.push(voto14)
+            data2.labels.push(nome14)
+        }
+        if (voto15 > 0) {
+            data2.datasets[0].data.push(voto15)
+            data2.labels.push(nome15)
+        }
+        if (voto16 > 0) {
+            data2.datasets[0].data.push(voto16)
+            data2.labels.push(nome16)
+        }
+        if (voto17 > 0) {
+            data2.datasets[0].data.push(voto17)
+            data2.labels.push(nome17)
+        }
 
-</script>
+        const config2 = {
+            type: 'bar',
+            data: data2,
+            options: {}
+        };
 
-<script>
-    const myChart3 = new Chart(
-        document.getElementById('myChart3'),
-        config3
-    );
+        const myChart2 = new Chart(
+            document.getElementById('myChart2'),
+            config2
+        );
+
+    }
+
+    function votos_grafico3() {
+        Chart.defaults.color = "#FFF";
+        const labels3 = [
+            'Roger',
+            'Rayleigh',
+            'Gaban',
+            'Crocus',
+            'Sanbell',
+            'Shanks',
+            'Buggy',
+        ];
+
+        const data3 = {
+            labels: [],
+            datasets: [{
+                label: 'Votos bando do Gol D. Roger',
+                backgroundColor: '#25ca',
+                borderColor: '#252525',
+                data: [],
+            }]
+        };
+
+        data3.datasets[0].data.push(voto18)
+        data3.labels.push(nome18)
+
+        if (voto19 > 0) {
+            data3.datasets[0].data.push(voto19)
+            data3.labels.push(nome19)
+        }
+        if (voto20 > 0) {
+            data3.datasets[0].data.push(voto20)
+            data3.labels.push(nome20)
+        }
+        if (voto21 > 0) {
+            data3.datasets[0].data.push(voto21)
+            data3.labels.push(nome21)
+        }
+        if (voto22 > 0) {
+            data3.datasets[0].data.push(voto22)
+            data3.labels.push(nome22)
+        }
+        if (voto23 > 0) {
+            data3.datasets[0].data.push(voto23)
+            data3.labels.push(nome23)
+        }
+        if (voto24 > 0) {
+            data3.datasets[0].data.push(voto24)
+            data3.labels.push(nome24)
+        }
+
+        const config3 = {
+            type: 'bar',
+            data: data3,
+            options: {}
+        };
+
+
+        const myChart3 = new Chart(
+            document.getElementById('myChart3'),
+            config3
+        );
+
+    }
+
+
+    function sair(){
+        window.location = "./index.html";
+    }
+
+    var voto1 = 0;
+    var voto2 = 0;
+    var voto3 = 0;
+    var voto4 = 0;
+    var voto5 = 0;
+    var voto6 = 0;
+    var voto6 = 0;
+    var voto7 = 0;
+    var voto8 = 0;
+    var voto9 = 0;
+    var voto10 = 0;
+
+    var voto11 = 0;
+    var voto12 = 0;
+    var voto13 = 0;
+    var voto14 = 0;
+    var voto15 = 0;
+    var voto16 = 0;
+    var voto17 = 0;
+
+    var voto18 = 0;
+    var voto19 = 0;
+    var voto20 = 0;
+    var voto21 = 0;
+    var voto22 = 0;
+    var voto23 = 0;
+    var voto24 = 0;
+
+    var nome1 = "";
+    var nome2 = "";
+    var nome3 = "";
+    var nome4 = "";
+    var nome5 = "";
+    var nome6 = "";
+    var nome7 = "";
+    var nome8 = "";
+    var nome9 = "";
+    var nome10 = "";
+
+    var nome11 = "";
+    var nome12 = "";
+    var nome13 = "";
+    var nome14 = "";
+    var nome15 = "";
+    var nome16 = "";
+    var nome17 = "";
+
+    var nome18 = "";
+    var nome19 = "";
+    var nome20 = "";
+    var nome21 = "";
+    var nome22 = "";
+    var nome23 = "";
+    var nome24 = "";
+
+
+
+    function dashboard() {
+
+        fetch("/usuarios/pegar_voto").then(function (resposta) {
+            if (resposta.ok) {
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+                    var teste = resposta
+                    voto1 = resposta[0].voto_recebido;
+                    nome1 = resposta[0].nome;
+
+                    if (resposta[1]) {
+                        voto2 = resposta[1].voto_recebido;
+                        nome2 = resposta[1].nome;
+                    }
+                    if (resposta[2]) {
+                        voto3 = resposta[2].voto_recebido;
+                        nome3 = resposta[2].nome;
+                    }
+                    if (resposta[3]) {
+                        voto4 = resposta[3].voto_recebido;
+                        nome4 = resposta[3].nome;
+                    }
+                    if (resposta[4]) {
+                        voto5 = resposta[4].voto_recebido;
+                        nome5 = resposta[4].nome;
+                    }
+                    if (resposta[5]) {
+                        voto6 = resposta[5].voto_recebido;
+                        nome6 = resposta[5].nome;
+                    }
+                    if (resposta[6]) {
+                        voto7 = resposta[6].voto_recebido;
+                        nome7 = resposta[6].nome;
+                    }
+                    if (resposta[7]) {
+                        voto8 = resposta[7].voto_recebido;
+                        nome8 = resposta[7].nome;
+                    }
+                    if (resposta[8]) {
+                        voto9 = resposta[8].voto_recebido;
+                        nome9 = resposta[8].nome;
+                    }
+                    if (resposta[9]) {
+                        voto10 = resposta[9].voto_recebido;
+                        nome10 = resposta[9].nome;
+                    }
+
+                    votos_grafico1()
+
+                });
+
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+        });
+
+    }
+
+    function dashboard2() {
+
+        fetch("/usuarios/pegar_voto2").then(function (resposta) {
+            if (resposta.ok) {
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+                    var teste = resposta
+
+                    voto11 = resposta[0].voto_recebido;
+                    nome11 = resposta[0].nome;
+
+
+                    if (resposta[1]) {
+                        voto12 = resposta[1].voto_recebido;
+                        nome12 = resposta[1].nome;
+                    }
+                    if (resposta[12]) {
+                        voto13 = resposta[2].voto_recebido;
+                        nome13 = resposta[2].nome;
+                    }
+                    if (resposta[3]) {
+                        voto14 = resposta[3].voto_recebido;
+                        nome14 = resposta[3].nome;
+                    }
+                    if (resposta[4]) {
+                        voto15 = resposta[4].voto_recebido;
+                        voto15 = resposta[4].nome;
+                    }
+                    if (resposta[5]) {
+                        voto16 = resposta[5].voto_recebido;
+                        voto16 = resposta[5].nome;
+                    }
+                    if (resposta[6]) {
+                        voto17 = resposta[6].voto_recebido;
+                        nome17 = resposta[6].nome;
+                    }
+
+                    votos_grafico2()
+
+                });
+
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+        });
+
+    }
+
+    function dashboard3() {
+
+        fetch("/usuarios/pegar_voto3").then(function (resposta) {
+            if (resposta.ok) {
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+                    var teste = resposta
+                    voto18 = resposta[0].voto_recebido;
+                    nome18 = resposta[0].nome;
+
+                    if (resposta[1]) {
+                        voto19 = resposta[1].voto_recebido;
+                        nome19 = resposta[1].nome;
+                    }
+                    if (resposta[2]) {
+                        voto20 = resposta[2].voto_recebido;
+                        nome20 = resposta[2].nome;
+                    }
+                    if (resposta[3]) {
+                        voto21 = resposta[3].voto_recebido;
+                        nome21 = resposta[3].nome;
+                    }
+                    if (resposta[4]) {
+                        voto22 = resposta[4].voto_recebido;
+                        nome22 = resposta[4].nome;
+                    }
+                    if (resposta[5]) {
+                        voto23 = resposta[5].voto_recebido;
+                        nome23 = resposta[5].nome;
+                    }
+                    if (resposta[6]) {
+                        voto24 = resposta[6].voto_recebido;
+                        nome24 = resposta[6].nome;
+                    }
+
+                    votos_grafico3()
+
+                });
+
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+        });
+
+    }
 
 </script>
 
